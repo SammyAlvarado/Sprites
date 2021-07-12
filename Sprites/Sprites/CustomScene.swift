@@ -13,7 +13,10 @@ class CustomScene: SKScene {
         guard !touches.isEmpty, let touch = touches.first
             else { return }
         
-        // Work with your touch here
+        let node = SKShapeNode(circleOfRadius: 8)
+        node.fillColor = .red
+        node.position = touch.location(in: self)
+        addChild(node)
     }
 }
 
